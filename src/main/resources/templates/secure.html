@@ -1,11 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 <body>
- <h2>Admin Page</h2>
+    <h3>Secure Page</h3>
+    <a href="/logout">Logout</a>
+    <h4>Email</h4>
+    <p th:text="${user.email}"></p>
+    <h4>First Name</h4>
+    <p th:text="${user.firstName}"></p>
+    <h4>Last Name</h4>
+    <p th:text="${user.lastName}"></p>
 </body>
 </html>
