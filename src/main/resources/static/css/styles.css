@@ -11,3 +11,47 @@ html, body {
     border: 1px solid #000;
     padding: 5rem;
 }
+
+.sign-up-in {
+    border: 1px solid #1DA1F2;
+    border-radius: 5px;
+}
+
+.sign-in {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.sign-up {
+    background-color: #1DA1F2;
+    color: #fff !important;
+}
+
+.horn {
+    color: #1DA1F2;
+}
+
+header {
+    padding: 156px 0 100px;
+}
+
+section {
+    padding: 150px 0;
+}
+
+@media only screen and (max-width: 992px) {
+    .sign-up-in {
+        border: 0px solid #fff;
+        border-radius: 0px;
+    }
+
+    .sign-in {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    .sign-up {
+        background-color: #f8f9fa;
+        color: rgba(0,0,0,.5) !important;
+    }
+}
