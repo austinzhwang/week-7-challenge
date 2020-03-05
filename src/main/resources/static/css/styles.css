@@ -27,6 +27,10 @@ html, body {
     color: #fff !important;
 }
 
+.navbar-brand {
+    letter-spacing: 2px;
+}
+
 .horn {
     color: #1DA1F2;
 }
