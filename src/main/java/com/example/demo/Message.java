@@ -14,6 +14,9 @@ public class Message {
     private long id;
 
     @NotNull
+    private String title;
+
+    @NotNull
     private String content;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -30,7 +33,8 @@ public class Message {
         user = new User();
     }
 
-    public Message(@NotNull String content, LocalDateTime timeStamp, @NotNull String img, User user) {
+    public Message(@NotNull String title, @NotNull String content, LocalDateTime timeStamp, @NotNull String img, User user) {
+        this.title = title;
         this.content = content;
         this.timeStamp = timeStamp;
         this.img = img;
@@ -75,5 +79,13 @@ public class Message {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

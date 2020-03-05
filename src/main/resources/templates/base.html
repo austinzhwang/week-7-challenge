@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
 <nav th:fragment="navbar-links" class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
@@ -18,23 +19,34 @@
                     <a class="nav-link js-scroll-trigger" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#services">Profile</a>
+                    <a class="nav-link js-scroll-trigger" href="/profile">Profile</a>
                 </li>
                 <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a class="nav-link js-scroll-trigger" href="#contact">New Message</a>
+                    <a class="nav-link js-scroll-trigger" href="/add-message">Add Message</a>
                 </li>
                 <li sec:authorize="!isAuthenticated()" class="nav-item">
                     <a class="nav-link js-scroll-trigger sign-up-in sign-in" href="/login">Login</a>
                 </li>
-                <li sec:authorize="isAuthenticated()" class="nav-item">
-                    <a class="nav-link js-scroll-trigger sign-up-in sign-in" href="/logout">Logout</a>
-                </li>
-                <li class="nav-item">
+                <li sec:authorize="!isAuthenticated()" class="nav-item">
                     <a class="nav-link js-scroll-trigger sign-up-in sign-up" href="/register">Sign Up</a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a th:inline="text" class="nav-link js-scroll-trigger sign-up-in sign-in" href="/profile">Welcome [[${#authentication.name}]]</a>
+                </li>
+                <li sec:authorize="isAuthenticated()" class="nav-item">
+                    <a class="nav-link js-scroll-trigger sign-up-in sign-up" href="/logout">Logout</a>
                 </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<!-- Footer -->
+<footer th:fragment="footer-frag" class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; Bull Horn 2020</p>
+    </div>
+    <!-- /.container -->
+</footer>
 </body>
 </html>

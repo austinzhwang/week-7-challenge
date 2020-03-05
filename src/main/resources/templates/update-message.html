@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>BullHorn | Edit Message</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        html, body {
+            height: 100vh;
+            height: 100%;
+        }
+
+        .letter-space {
+            letter-spacing: 2px;
+        }
+
+        .form-border {
+            border: 1px solid #000;
+            padding: 5rem;
+        }
+
+        .sign-up-in {
+            border: 1px solid #1DA1F2;
+            border-radius: 5px;
+        }
+
+        .sign-in {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .sign-up {
+            background-color: #1DA1F2;
+            color: #fff !important;
+        }
+
+        .navbar-brand {
+            letter-spacing: 2px;
+        }
+
+        .horn {
+            color: #1DA1F2;
+        }
+
+        header {
+            padding: 156px 0 100px;
+        }
+
+        section {
+            padding: 150px 0;
+        }
+
+    </style>
+</head>
+<body>
+<nav th:replace="base :: navbar-links"></nav>
+<div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6 form-border">
+            <h2 class="letter-space text-uppercase">Edit Message</h2>
+            <form action="#" th:action="@{/process-message}" th:object="${message}" class="justify-content-center" method="post" enctype="multipart/form-data">
+                <input type="hidden" th:field="*{id}"/>
+                <input type="hidden" th:field="*{user}" th:value="${user}"/>
+                <input type="hidden" th:field="*{img}" />
+                <div class="form-group">
+                    <input th:field="*{title}" type="text" class="form-control" placeholder="Title" required/>
+                </div>
+                <div class="form-group">
+                    <textarea th:field="*{content}" class="form-control" rows="5" placeholder="Enter Message" required/>
+                </div>
+                <div class="form-group">
+                    <input type="file" name="file"/>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+<footer th:replace="base :: footer-frag"></footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+
+</body>
+</html>
