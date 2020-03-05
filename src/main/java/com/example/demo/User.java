@@ -6,6 +6,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name="User_Data")
@@ -48,8 +50,12 @@ public class User {
     inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Collection<Role> roles;
 
-    public User() {
+    @OneToMany(mappedBy = "user")
+    private Set<Message> messages;
 
+    public User() {
+        roles = new HashSet<>();
+        messages = new HashSet<>();
     }
 
     public User(String email, String password, String firstName, String lastName, boolean enabled, String username) {
@@ -126,4 +132,11 @@ public class User {
         this.roles = roles;
     }
 
+    public Set<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(Set<Message> messages) {
+        this.messages = messages;
+    }
 }

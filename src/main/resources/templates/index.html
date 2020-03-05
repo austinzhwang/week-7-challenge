@@ -37,9 +37,8 @@
                     </div>
 
                     <div class="card-body" sec:authorize="isAuthenticated()">
-                        <hr>
-                        <a th:href="@{/update/{id}(id=${message.id})}">Edit</a>
-                        <a th:href="@{/delete/{id}(id=${message.id})}">Delete</a>
+                        <a th:href="@{/update/{id}(id=${message.id})}"><button type="button" class="btn btn-primary">Edit</button></a>
+                        <a th:href="@{/delete/{id}(id=${message.id})}"><button type="button" class="btn btn-danger">Delete</button></a>
                     </div>
                 </div>
             </div>
@@ -51,7 +50,7 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h2>The next generation social media platform</h2>
-                    <p class="lead">Bull Horn is the newest social media app available with features from many other
+                    <p class="lead">Bull Horn is the newest social media website available with features from many other
                         popular social media websites. We have enhanced these features to make it easier and faster
                     to communicate with people around the world.</p>
                     <a sec:authorize="!isAuthenticated()" class="btn btn-primary btn-lg" href="/register" role="button">Sign Up</a>
@@ -65,9 +64,7 @@
             <div class="row">
                 <div class="col-lg-8 mx-auto">
                     <h2>Contact Us</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero odio fugiat voluptatem
-                        dolor, provident officiis, id iusto! Obcaecati incidunt, qui nihil beatae magnam et repudiandae
-                        ipsa exercitationem, in, quo totam.</p>
+                    <p class="lead">Message us to suggest new features or report bugs.</p>
                 </div>
             </div>
         </div>
